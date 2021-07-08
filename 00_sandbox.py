@@ -1,4 +1,9 @@
-# Count up from one to 10...
+# get name until an exit oode is entered...
 
-for item in range(10, 0-1, - 1):
-    print(item)
+name = ""
+while name.lower() != "xxx":
+    name = input("Who are you? ")
+    print(name)
+
+print()
+print("We are done!")
