@@ -1,9 +1,4 @@
-# Ask users for a number
-get_number = int(input("choose a number"))
+# Count up from one to 10...
 
-# Multiply the number by 5
-times_five = get_number * 5
-
-# Output the result
-print(times_five)
-print()
+for item in range(10, 0-1, - 1):
+    print(item)
