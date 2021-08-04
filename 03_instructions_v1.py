@@ -22,3 +22,7 @@ def yes_no(question):
 show_instructions = yes_no("Have you played the game before? ")
 print("You chose {}".format(show_instructions))
 
+if show_instructions == "yes" :
+    print("Display instructions")
+else:
+    print("Programs Continues")
