@@ -1,7 +1,6 @@
 import random
 
 # main Routine goes here
-tokens = ["unicorn", "horse", "horse", "horse", "zebra", "zebra", "zebra", "donkey", "donkey", "donkey"]
 STARTING_BALANCE = 100
 
 balance = STARTING_BALANCE
@@ -11,19 +10,17 @@ for item in range(0, 10):
 
     # Adjust balance
     if 1 <= chosen_num <= 5:
-        chosen == "unicorn"
+        chosen += "unicorn"
         balance += 4
-    elif 6 <= chosen_num <= 36:
-        chosen == "donkey"
-        balance -= 1
+    elif 6 <= chosen_num <=36:
+        chosen = "donkey"
     else:
         if chosen_num % 2 == 0:
-            chosen ="horse"
+            chosen = "hours"
         else:
             chosen = "zebra"
         balance -= 0.5
 
-    print("You got a {}. Your balance is " "${:.2f}".format(chosen, balance))
-
+    print("you got a {}. your balance is ""$ {:.2f}".format(chosen, balance))
 
 print()
