@@ -35,11 +35,38 @@ def number_check(question,low,high):
         except ValueError:
             print(error)
 
+def statement_generator(statement, decoration):
+
+    sides = decoration * 3
+
+    statement = "{} {} {}".format(sides, statement, sides)
+    top_bottom = decoration * len(statement)
+
+    print(top_bottom)
+    print(statement)
+    print(top_bottom)
+
+    return ""
+
+
+    sides = decoration * 3
+
+    statement = "{} {} {}".format(sides, greeting, sides)
+    top_bottom = decoration * len(statement)
+
+    print(top_bottom)
+    print(greeting)
+    print(top_bottom)
+
+    return ""
+
 # Main routine goes here...
+welcome = statement_generator("Welcome to the lucky Unicorn Game", "*")
 
 show_instructions = yes_no("Have you played the game before? ")
 if show_instructions == "no":
     print("Display instructions")
+    print("You have to chosen number,1 to 10")
 
 how_much = number_check("How much would you like to play with?",1,10)
 balance = how_much
@@ -53,25 +80,30 @@ while play_again == "":
     # user gets a unicorn (add $4 to balance)
     if 1 <= chosen_num <= 5:
         chosen = "unicorn"
+        decoration = "U"
         balance += 4
     # if the random # is between 6 and 36
     # user gets a donkey (subtract $1 from balance)
-    elif 6 <= chosen_num <= 36:
+    elif 10 <= chosen_num <= 36:
         chosen = "donkey"
+        decoration = "D"
         balance -= 1
     else:
         # if the number is even, set the chosen
         # item to a horse
-        if chosen_num % 2 == 0:
+        if chosen_num > 2 == 0:
             chosen ="horse"
+            decoration = "H"
         # othervise set it to a zebra
         else:
-            chosen = "zebra"
+            if chosen_num >= 4:
+             chosen = "zebra"
+            decoration = "Z"
         balance -= 0.5
 
-    print("You got a {}. Your balance is " "${:.2f}".format(chosen, balance))
+    outcome = statement_generator("You got a {}. Your balance is " "${:.2f}".format(chosen, balance), decoration)
 
-    if balance > 1:
+    if balance < 1:
             play_again ="xxx"
             print("Sorry you have run out of money")
     else:
